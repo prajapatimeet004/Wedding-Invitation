@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryan & Ishani | Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mandala-bg"></div>
+    <button id="theme-back-btn">← Back to Wedding</button>
+
+
+    <header class="hero" id="hero-section">
+        <!-- Scroll-Synced Video Background -->
+        <video id="hero-video" src="assets/videos/hero_video.mp4" muted playsinline preload="auto"
+            poster="assets/images/ganesh_sthapana.png"></video>
+        <canvas id="hero-canvas" class="hero-video-canvas"></canvas>
+
+        <div class="hero-content-wrapper">
+            <div class="hero-left">
+
+
+                <h1 class="couple-names">Hemmangi <span>&</span> Manish</h1>
+            </div>
+
+            <div class="hero-right">
+                <p class="wedding-date">February 22nd, 2026</p>
+            </div>
+        </div>
+        <a href="#invite" class="scroll-down">Scroll to Explore</a>
+    </header>
+
+    <section id="traditions" class="traditions-gallery section-padding">
+        <canvas id="traditions-3d-canvas" class="traditions-background-canvas"></canvas>
+        <div class="container">
+            <h2 class="section-title">The Traditions</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-up">
+                    <img src="assets/images/mehndi.png" alt="Mehndi Ceremony">
+                    <div class="gallery-overlay">
+                        <span>Mehndi Ceremony</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-up">
+                    <img src="assets/images/sangeet.png" alt="Sangeet Night">
+                    <div class="gallery-overlay">
+                        <span>Sangeet & Dance</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-up">
+                    <img src="assets/images/vows.png" alt="Wedding Vows">
+                    <div class="gallery-overlay">
+                        <span>The Sacred Vows</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="wedding-events section-padding">
+        <canvas id="night-sky-canvas" class="night-sky-background"></canvas>
+        <div class="container">
+            <h2 class="section-title">Wedding Itinerary</h2>
+
+
+            <div class="itinerary-wrapper snaking-timeline" id="timeline">
+                <!-- Zig-zag Path for All Screens -->
+                <svg class="itinerary-svg-container" viewBox="0 0 100 2800" preserveAspectRatio="none">
+                    <path id="snaking-path"
+                        d="M 50 0 Q 90 200 50 400 Q 10 600 50 800 Q 90 1000 50 1200 Q 10 1400 50 1600 Q 90 1800 50 2000 Q 10 2200 50 2400 Q 90 2600 50 2800"
+                        fill="none" stroke="#ffeb3b" stroke-width="2" stroke-dasharray="10,10" />
+                </svg>
+                <div id="mascot-3d-container" class="scrolling-mascot-3d"></div>
+
+                <!-- Event 1: Ganesh Sthapana (First curve - left) -->
+                <div id="ganesh-event" class="itinerary-item-single left fade-up" style="margin-bottom: 15vh;">
+                    <div class="itinerary-content">
+                        <div class="event-illustration">
+                            <img src="assets/images/ganesh_sthapana.png" alt="Ganesh Sthapana">
+                        </div>
+                        <div class="event-info">
+                            <h4>Ganesh Sthapana</h4>
+                            <p class="time">Feb 21 • 8:00 AM onwards</p>
+                            <button class="btn-itinerary"
+                                onclick="addToCalendar('Ganesh Sthapana', '20260221T080000', '20260221T100000', 'The Heritage Hall')">Add
+                                to Calendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Mosadu Ceremony (Second curve - right) -->
+                <div class="itinerary-item-single right fade-up" style="margin-bottom: 25vh;">
+                    <div class="itinerary-content">
+                        <div class="event-illustration">
+                            <img src="assets/images/mosadu.png" alt="Mosadu Ceremony" id="mosadu-image"
+                                style="cursor: pointer;">
+                        </div>
+                        <div class="event-info">
+                            <h4>Mosadu Ceremony</h4>
+                            <p class="time">Feb 21 • 10:00 AM onwards</p>
+                            <button class="btn-itinerary"
+                                onclick="addToCalendar('Mosadu Ceremony', '20260221T100000', '20260221T120000', 'The Heritage Hall')">Add
+                                to Calendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Haldi Ceremony (Third curve - left) -->
+                <div class="itinerary-item-single left fade-up" style="margin-bottom: 20vh;">
+                    <div class="itinerary-content">
+                        <div class="event-illustration">
+                            <img src="assets/images/haldi.png" alt="Haldi Ceremony" id="haldi-image"
+                                style="cursor: pointer;">
+                        </div>
+                        <div class="event-info">
+                            <h4>Haldi Ceremony</h4>
+                            <p class="time">Feb 21 • 01:00 PM onwards</p>
+                            <button class="btn-itinerary"
+                                onclick="addToCalendar('Haldi Ceremony', '20260221T130000', '20260221T150000', 'The Heritage Hall')">Add
+                                to Calendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4: Grah Shanti (Fourth curve - right) -->
+                <div class="itinerary-item-single right fade-up" style="margin-bottom: 15vh;">
+                    <div class="itinerary-content">
+                        <div class="event-illustration">
+                            <img src="assets/images/grah_shanti.png" alt="Grah Shanti" id="grah-shanti-image"
+                                style="cursor: pointer;">
+                        </div>
+                        <div class="event-info">
+                            <h4>Grah Shanti</h4>
+                            <p class="time">Feb 21 • 4:15 PM onwards</p>
+                            <button class="btn-itinerary"
+                                onclick="addToCalendar('Grah Shanti', '20260221T161500', '20260221T191500', 'The Heritage Hall')">Add
+                                to Calendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5: Garba Night (Fifth curve - left) -->
+                <div class="itinerary-item-single left fade-up" style="margin-bottom: 15vh;">
+                    <div class="itinerary-content">
+                        <div class="event-illustration">
+                            <img src="assets/images/garba.png" alt="Garba">
+                        </div>
+                        <div class="event-info">
+                            <h4>Garba Night</h4>
+                            <p class="time">Feb 21 • 8:00 PM onwards</p>
+                            <button class="btn-itinerary"
+                                onclick="addToCalendar('Garba Night', '20260221T200000', '20260221T235900', 'The Grand Ballroom')">Add
+                                to Calendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 6: Hast Melap (Sixth curve - right) -->
+                <div class="itinerary-item-single right fade-up" style="margin-bottom: 15vh;">
+                    <div class="itinerary-content">
+                        <div class="event-illustration">
+                            <img src="assets/images/hast_melap.jpg" alt="Hast Melap">
+                        </div>
+                        <div class="event-info">
+                            <h4>Hast Melap</h4>
+                            <p class="time">Feb 22 • 8:00 PM onwards</p>
+                            <button class="btn-itinerary"
+                                onclick="addToCalendar('Hast Melap', '20260222T200000', '20260222T230000', 'Mandapam Garden')">Add
+                                to Calendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 7: Celebratory Dinner (Seventh curve - left) -->
+                <div class="itinerary-item-single left fade-up" style="margin-bottom: 15vh;">
+                    <div class="itinerary-content">
+                        <div class="event-illustration">
+                            <img src="assets/images/dinner.jpg" alt="Dinner">
+                        </div>
+                        <div class="event-info">
+                            <h4>Celebratory Dinner</h4>
+                            <p class="time">Feb 22 • 7:00 PM onwards</p>
+                            <button class="btn-itinerary"
+                                onclick="addToCalendar('Celebratory Dinner', '20260222T190000', '20260222T220000', 'Royal Dining Pavilion')">Add
+                                to Calendar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="rsvp-section section-padding">
+        <div class="container">
+            <div class="rsvp-card fade-up">
+                <h2>RSVP</h2>
+                <p>We look forward to seeing you!</p>
+                <form id="rsvp-form">
+                    <input type="text" id="rsvp-name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="rsvp-email" name="email" placeholder="Your Email" required>
+
+                    <div class="notification-box">
+                        <p class="notif-title">✨ Get Event Reminders</p>
+                        <p class="notif-subtitle">Receive a notification 1 hour before each ceremony.</p>
+
+                        <div class="notif-options">
+                            <label class="notif-toggle">
+                                <input type="checkbox" id="email-notif-toggle" checked>
+                                <span class="toggle-label">Email Reminders</span>
+                            </label>
+                            <label class="notif-toggle">
+                                <input type="checkbox" id="sms-notif-toggle">
+                                <span class="toggle-label">SMS Reminders</span>
+                            </label>
+                        </div>
+
+                        <div id="phone-input-group" class="phone-input-group hidden">
+                            <input type="tel" id="visitor-phone" placeholder="Mobile Number (e.g. +91 9876543210)">
+                        </div>
+                    </div>
+
+                    <select required>
+                        <option value="" disabled selected>Will you attend?</option>
+                        <option value="yes">Joyfully Accept</option>
+                        <option value="no">Regretfully Decline</option>
+                    </select>
+                    <button type="submit" class="btn-royal">Send Response & Set Reminders</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="location-section section-padding">
+        <div class="container">
+            <h2 class="section-title">Wedding Venue</h2>
+            <div class="location-card fade-up">
+                <div class="venue-info">
+                    <h3>VMC Lalbaug Atithi Gruh</h3>
+                    <p>Lalbaug Road, Vadodara, Gujarat</p>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.884084890924!2d73.20176737431122!3d22.282380343546627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc5eb15651041%3A0x6315a840fda572d5!2sVMC%20Lalbaug%20Atithi%20Gruh!5e0!3m2!1sen!2sin!4v1770382970761!5m2!1sen!2sin"
+                        width="100%" height="450" style="border:0; border-radius: 15px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Made with Love for Hemmangi & Manish</p>
+        <div class="footer-mandala"></div>
+    </footer>
+
+
+    <!-- Video Transition Overlay with Ambilight Effect -->
+    <div id="video-overlay" class="video-transition-overlay">
+        <div class="video-matte-frame"></div>
+        <button class="video-close-btn" id="close-video">← Back to Wedding</button>
+        <!-- Background Blur Video (The "Glow") -->
+        <video id="transition-video-bg" class="video-bg-glow" muted playsinline loop preload="none"></video>
+
+        <div class="video-container">
+            <video id="transition-video" playsinline preload="metadata" loop></video>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js" defer></script>
+
+    <!-- Ganesh Theme Background Video Moved to Bottom for Better Mobile Layering -->
+    <div id="ganesh-theme-container" class="theme-video-container">
+        <video id="ganesh-theme-video" src="assets/videos/ganesh_theme.mp4" loop muted playsinline autoplay
+            preload="metadata" poster="assets/images/ganesh_sthapana.png"></video>
+    </div>
+</body>
+
+</html>
